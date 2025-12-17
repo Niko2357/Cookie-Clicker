@@ -1,4 +1,4 @@
-# Catch It
+# Catch It - Game
 Game works on a cookie clicker principle (unexpectidely). The player earns cookies by clicking on a cookie that moves around or more specificaly teleports. User can purchase upgrades with real money that increase cookie production over time. Manipulates with DOM and basic game mechanics (upgrades, costs, multipliers). 
 #### The application overview:
 * responds to user interactions
@@ -25,8 +25,10 @@ Player clicks the auto clicker purchase button and payment form appears. Player 
 ### Visual Design
 * Background image
 * Pixel art cookie + animation - drawn by [Vivi](https://github.com/notvivi)
-  
-## Bank
+
+## Game Shop - Server
+
+## Bank - Server
 Ensures bank transactions and transfers money between two accounts. In this example money from user, who brought game currency. Transaction is communicated to external server (Catch It game) using secure webhooks. Firstly bank server accepts a transfer request from external 
 source and confirms acceptance. Then processes the transaction with simulated delay (account confirmations, etc.). Finally it notifies the requesting system about results by webhook. All data are stored in memory while the server is running.
 #### The application overview:
