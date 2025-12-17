@@ -1,9 +1,11 @@
 # Catch It - Game
 Game works on a cookie clicker principle (unexpectidely). The player earns cookies by clicking on a cookie that moves around or more specificaly teleports. User can purchase upgrades with real money that increase cookie production over time. Manipulates with DOM and basic game mechanics (upgrades, costs, multipliers). 
+
 #### The application overview:
 * responds to user interactions
 * updates interface dynamically
 * monetization features
+
 #### Structure:
 * HTML
      * structure and layout of game
@@ -13,12 +15,16 @@ Game works on a cookie clicker principle (unexpectidely). The player earns cooki
      * game logic and interactivity
 
 ### Game mechanics
+
 #### Cookies and Clicking
 The player starts with 0 cookies. Clicking it will increase cookie count (game currency). Each click will add cookie quantity based on the current multiplier.
+
 #### Upgrade System
 Not only does cookie balance increase but also the cost increases after each click. 
+
 #### Automatic Cookie Generation
 Auto clickers generate cookies without user interaction. Cookies are added per secong depending on owned auto clickers.
+
 #### Payment and Paywall System
 Player clicks the auto clicker purchase button and payment form appears. Player submits personal information and bank is contacted. 
 
@@ -27,16 +33,43 @@ Player clicks the auto clicker purchase button and payment form appears. Player 
 * Pixel art cookie + animation - drawn by [Vivi](https://github.com/notvivi)
 
 ## Game Shop - Server
+Handles in-game purchases nad communicates with an external bank server to proccess payments. Backend for the game purchases. Firstly player requests to buy auto clicker, so this server contacts the bank server. Bank procedees with the transaction and notifies the game about successful or failed transaction. 
+
+#### The application overview:
+1. Express HTTP server
+2. Purchase endpoint
+3. Bank communication
+4. Webhook receiver of payment results
+
+#### API Endpoints:
+1. **POST** */buy-addon*
+   ```json
+       {
+          "playerId": "player_account",
+          "addonName": "Extra Lives Pack",
+          "price": 100
+       }
+   ```
+   Response:
+   ```json
+       HTTP 202
+       {
+          "status": "PROCESSING",
+          "message": "Contacting bank..."
+       }
+    ```
 
 ## Bank - Server
 Ensures bank transactions and transfers money between two accounts. In this example money from user, who brought game currency. Transaction is communicated to external server (Catch It game) using secure webhooks. Firstly bank server accepts a transfer request from external 
 source and confirms acceptance. Then processes the transaction with simulated delay (account confirmations, etc.). Finally it notifies the requesting system about results by webhook. All data are stored in memory while the server is running.
+
 #### The application overview:
 1. Express HTTP server
 2. Account storage
 3. Transfer endpoint
 4. Notification system
 5. Cryptographic signature mechanism for verification
+
 #### Account system:
 * Internal account
     * player_account
@@ -45,6 +78,7 @@ source and confirms acceptance. Then processes the transaction with simulated de
     * game_account
         * Game external account
         * Starts with zero value
+
 #### API Endpoins:
 1. **POST** */transfer*
    ```json
@@ -104,7 +138,7 @@ All webhooks have request secured by signature HMAC-SHA256. It's sent in X-Signa
   npm install node-fetch
   ```
 ### Usage
-Best way is to install zip of project you're interested in.
+Best way to test is to install zip of project you're interested in.
 
 ### Project Authors
 * [Vilma Tomanová](https://github.com/notvivi) - Game frontend developer
