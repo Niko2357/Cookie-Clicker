@@ -101,6 +101,8 @@ All webhooks have request secured by signature HMAC-SHA256. It's sent in X-Signa
   npm init -y
   npm install node-fetch
   ```
+### Usage
+Best way is to install zip of project you're interested in.
 
 ### Project Authors
 * [Vilma Tomanová](https://github.com/notvivi) - Game frontend developer
