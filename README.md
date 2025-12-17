@@ -1,8 +1,5 @@
-# Chachamaru Catch 
----
-
-
-### Functions 
+# Chachamaru catch
+Game works on a cookie clicker principle. The player earns cookies by clicking on a Chachamaru (cat) that is able to be invisible on meow. User can purchase upgrades with real money that increase cookie production over time. Manipulates with DOM and basic game mechanics (upgrades, costs, multipliers). 
 
 ## Bank
 Ensures bank transactions and transfers money between two accounts. In this example money from user, who brought game currency. Transaction is communicated to external server (Just Click game) using secure webhooks. Firstly bank server accepts a transfer request from external 
