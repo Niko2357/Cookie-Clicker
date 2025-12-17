@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cookie Clicker</title>
+</head>
+<body>
+    <h1>Cookie clicker</h1>
+    <div id="cookieLayout">
+        <button type="button" id="cookieButton"><img src="cookie.png" alt="cookie" id="cookie"></button>
+        <div id="cookieDisplay">You have 0 cookies</div>
+
+        <button type="button" id="upgradeButton">Upgrade clicker for 25 cookies</button>
+        <button id="autoClicker" onclick="showPaymentForm()">Purchase upgrade for auto clicker: 1$</button>
+    </div>
+    
+
+    <div id="paywallOverlay">
+        <div id="paymentForm">
+            <label>
+                Name on Account: <input type="text" required>
+            </label>
+            <br><br>
+            <label>
+                Account Number: <input type="text" required>
+            </label>
+            <br><br>
+            <button onclick="submitPayment()">Submit Payment</button>
+            <button onclick="exitPayment()">Exit</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
