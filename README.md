@@ -1,8 +1,33 @@
-# Chachamaru catch
-Game works on a cookie clicker principle. The player earns cookies by clicking on a Chachamaru (cat) that is able to be invisible on meow. User can purchase upgrades with real money that increase cookie production over time. Manipulates with DOM and basic game mechanics (upgrades, costs, multipliers). 
+# Catch It
+Game works on a cookie clicker principle (unexpectidely). The player earns cookies by clicking on a cookie that moves around or more specificaly teleports. User can purchase upgrades with real money that increase cookie production over time. Manipulates with DOM and basic game mechanics (upgrades, costs, multipliers). 
+#### The application overview:
+* responds to user interactions
+* updates interface dynamically
+* monetization features
+#### Structure:
+* HTML
+     * structure and layout of game
+* CSS
+     * visual styling and layout positioning
+* JavaScript
+     * game logic and interactivity
 
+### Game mechanics
+#### Cookies and Clicking
+The player starts with 0 cookies. Clicking it will increase cookie count (game currency). Each click will add cookie quantity based on the current multiplier.
+#### Upgrade System
+Not only does cookie balance increase but also the cost increases after each click. 
+#### Automatic Cookie Generation
+Auto clickers generate cookies without user interaction. Cookies are added per secong depending on owned auto clickers.
+#### Payment and Paywall System
+Player clicks the auto clicker purchase button and payment form appears. Player submits personal information and bank is contacted. 
+
+### Visual Design
+* Background image
+* Pixel art cookie + animation - drawn by [Vivi](https://github.com/notvivi)
+  
 ## Bank
-Ensures bank transactions and transfers money between two accounts. In this example money from user, who brought game currency. Transaction is communicated to external server (Just Click game) using secure webhooks. Firstly bank server accepts a transfer request from external 
+Ensures bank transactions and transfers money between two accounts. In this example money from user, who brought game currency. Transaction is communicated to external server (Catch It game) using secure webhooks. Firstly bank server accepts a transfer request from external 
 source and confirms acceptance. Then processes the transaction with simulated delay (account confirmations, etc.). Finally it notifies the requesting system about results by webhook. All data are stored in memory while the server is running.
 #### The application overview:
 1. Express HTTP server
