@@ -125,7 +125,6 @@ All webhooks have request secured by signature HMAC-SHA256. It's sent in X-Signa
     * Webhook sends data to another server automatically when new event or change occurs. The client doesn't have to ask server whether task is finished, however server will notify client when that happens. Here transfers aren't finished immediately, that's the reason webhook is used.
 * Error handling
     * Detects invalid input, prevents invalid operations and reacts to them with error messages or can throw an exception. In this project, it also handles the situation of low balance. If account does not contain needed balance the transfer fails.
-### Functions
 
 ### Required libraries
 * express
@@ -139,6 +138,8 @@ All webhooks have request secured by signature HMAC-SHA256. It's sent in X-Signa
   ```
 ### Usage
 Best way to test is to install zip of project you're interested in.
+Make sure to use these versions:
+* 
 
 ### Project Authors
 * [Vilma Tomanová](https://github.com/notvivi) - Game frontend developer
