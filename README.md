@@ -1,6 +1,6 @@
 ## Git Structure
 ```
- Cookie-Clicker/
+ CookieClicker/
 ├── README.md                  # Project documentation
 ├── testing/
 │   └── bank_cmd_test.png      # Input data for Bank
