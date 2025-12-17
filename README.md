@@ -1,3 +1,26 @@
+## Git Structure
+```
+ Cookie-Clicker/
+├── README.md                  # Project documentation
+├── testing/
+│   └── bank_cmd_test.png      # Input data for Bank
+│   └── gameShop_cmd_test.png  # Input data for GameShop
+├── code/
+│   ├── Bank/
+│   │   └── server.js          # Server for Bank transactions 
+│   ├── Game/
+│   │   └── index.html         # Web structure
+│   │   └── script.js          # Backend mechanics for game
+│   │   └── style.css          # Styles and layouts
+│   │   └── cookie.png         # Cookie pixel art
+│   │   └── background.png     # Background image
+│   └── GameShop/
+│       └── server.js          # Server for in-game purchases
+└── download/
+    └── Bank.zip               # Server Bank with libraries
+    └── GameShop.zip           # Server GameShop with libraries
+    └── Game.zip               # Zip of the game 
+```
 # Catch It - Game
 Game works on a cookie clicker principle (unexpectidely). The player earns cookies by clicking on a cookie that moves around or more specificaly teleports. User can purchase upgrades with real money that increase cookie production over time. Manipulates with DOM and basic game mechanics (upgrades, costs, multipliers). 
 
@@ -58,6 +81,17 @@ Handles in-game purchases nad communicates with an external bank server to procc
           "message": "Contacting bank..."
        }
     ```
+   
+### Required libraries
+* express
+  ```
+  npm i express
+  ```
+* node and node-fetch
+  ```
+  npm init -y
+  npm install node-fetch
+  ```
 
 ## Bank - Server
 Ensures bank transactions and transfers money between two accounts. In this example money from user, who brought game currency. Transaction is communicated to external server (Catch It game) using secure webhooks. Firstly bank server accepts a transfer request from external 
@@ -137,9 +171,11 @@ All webhooks have request secured by signature HMAC-SHA256. It's sent in X-Signa
   npm install node-fetch
   ```
 ### Usage
-Best way to test is to install zip of project you're interested in.
-Make sure to use these versions:
-* 
+> [!TIP]
+> Best way to test is to install zip of project you're interested in.
+Make sure to use these versions for server libraries:
+* express: ^5.2.1
+* node-fetch: ^3.3.2
 
 ### Project Authors
 * [Vilma Tomanová](https://github.com/notvivi) - Game frontend developer
